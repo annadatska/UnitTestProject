@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -32,6 +31,12 @@ public class SportPage extends BasePage {
 
     @FindBy(xpath = "//span[contains(@class,'fixture__number')]")
     private List<WebElement> scoresList;
+
+    @FindBy(xpath = "//h3[text()='Saturday 28th August']")
+    private WebElement dateOfGame;
+
+    @FindBy(xpath = "//time[text()='SAT 28 Aug 2021']")
+    private WebElement secondDateOfGame;
 
     public SportPage(WebDriver driver) {
         super(driver);
@@ -67,10 +72,6 @@ public class SportPage extends BasePage {
         }
     }
 
-    public WebElement getFirstTeam() {
-        return teamsNamesList.get(0);
-    }
-
     public String getNameOfFirstTeam() {
         return teamsNamesList.get(0).getText();
     }
@@ -91,15 +92,11 @@ public class SportPage extends BasePage {
         teamsNamesList.get(0).click();
     }
 
-    public WebElement getSecondTeam() {
-        return teamsNamesList.get(1);
+    public WebElement getDateOfGame() {
+        return dateOfGame;
     }
 
-    public WebElement getFirstScore() {
-        return scoresList.get(0);
-    }
-
-    public WebElement getSecondScore() {
-        return scoresList.get(1);
+    public WebElement getSecondDateOfGame() {
+        return secondDateOfGame;
     }
 }

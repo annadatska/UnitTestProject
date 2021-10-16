@@ -129,6 +129,72 @@ public class DefinitionSteps {
         assertEquals(errorMessage, newsPage.getTextOfEmailErrorMessage());
     }
 
+    @And("User clicks Sport menu button")
+    public void userClicksSportMenuButton() {
+        homePage.waitForPageLoadComplete(DEFAULT_TIMEOUT);
+        homePage.clickSportButton();
+    }
+
+    @And("User clicks Football menu button")
+    public void userClicksFootballMenuButton() {
+        sportPage = pageFactoryManager.getSportPage();
+        sportPage.waitForPageLoadComplete(DEFAULT_TIMEOUT);
+        sportPage.clickFootballButton();
+    }
+
+    @And("User clicks Scores and fixtures button")
+    public void userClicksScoresAndFixturesButton() {
+        sportPage.waitForPageLoadComplete(DEFAULT_TIMEOUT);
+        sportPage.clickScoresAndFixturesButton();
+    }
+
+    @When("User makes search for the championship by a keyword {string}")
+    public void searchForTheChampionship(final String championship) {
+        sportPage.waitForPageLoadComplete(DEFAULT_TIMEOUT);
+        sportPage.enterTextToSearchField(championship);
+        sportPage.waitVisibilityOfElement(DEFAULT_TIMEOUT, sportPage.getSearchResultItem());
+        sportPage.clickSearchResultItem();
+    }
+
+    @And("User filters the Score Results by month {string}")
+    public void filterTheScoreResultsByMonth(final String month) {
+        sportPage.waitForPageLoadComplete(DEFAULT_TIMEOUT);
+        sportPage.selectResultsMonth(month);
+    }
+
+    @Then("User checks the name of first team {string}")
+    public void userChecksTheNameOfFirstTeam(final String firstTeam) {
+        sportPage.waitForPageLoadComplete(DEFAULT_TIMEOUT);
+        sportPage.waitVisibilityOfElement(DEFAULT_TIMEOUT, sportPage.getDateOfGame());
+        assertEquals(firstTeam, sportPage.getNameOfFirstTeam());
+    }
+    @Then("User checks the name of second team {string}")
+    public void userChecksTheNameOfSecondTeam(final String secondTeam) {
+        sportPage.waitForPageLoadComplete(DEFAULT_TIMEOUT);
+        assertEquals(secondTeam, sportPage.getNameOfSecondTeam());
+    }
+
+    @And("User checks the score of first team {string}")
+    public void userChecksFirstScore(final String firstScore) {
+        assertEquals(firstScore, sportPage.getScoreOfFirstTeam());
+    }
+
+    @And("User checks the score of second team {string}")
+    public void userCheckSecondScore(final String secondScore) {
+        assertEquals(secondScore, sportPage.getScoreOfSecondTeam());
+    }
+
+    @Then("User checks the name of first team {string} on the next page")
+    public void checkTheNameOfFirstTeamFirstTeamOnTheNextPage(final String firstTeam) {
+        sportPage.waitVisibilityOfElement(DEFAULT_TIMEOUT, sportPage.getSecondDateOfGame());
+        assertEquals(firstTeam, sportPage.getNameOfFirstTeam());
+    }
+
+    @When("User clicks on first team name")
+    public void userClicksOnFirstTeamName() {
+        sportPage.clickOnFirstTeam();
+    }
+
     @After
     public void tearDown() {
         driver.manage().deleteAllCookies();

@@ -11,13 +11,13 @@ Feature: Search articles
     Then User checks the name of the headline article against the '<expectedName>'
     Examples:
       | expectedName |
-      | Johnson visits scene where British MP killed |
+      | MPs will not be cowed after killing, says UK minister |
 
   Scenario Outline: Check secondary article titles
     Then User checks article titles '<articleTitles>' to the right and below the headline article
     Examples:
       | articleTitles |
-      | British MP killing was terrorist incident - police, Russia\'s daily Covid deaths hit 1,000 landmark |
+      | Russia\'s daily Covid deaths hit 1,000 landmark, Myanmar army general excluded from leaders\' summit |
 
   Scenario Outline: Search by headline article category link
     When User copies the text of the Category link of the headline article and enters it to search bar
@@ -25,4 +25,4 @@ Feature: Search articles
     Then User checks the '<expectedName>' of the first article
     Examples:
       | expectedName |
-      | BBC Essex update: BBC Essex update 12:30 BST |
+      | Weather forecast for the UK |
