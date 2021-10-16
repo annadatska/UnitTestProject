@@ -1,2 +1,19 @@
 # Project exclude paths
 /target/
+/.idea/vcs.xml
+/.idea/uiDesigner.xml
+/.idea/runConfigurations.xml
+/.idea/misc.xml
+/.idea/jarRepositories.xml
+/.idea/sonarlint/issuestore/index.pb
+/.idea/sonarlint/issuestore/e/2/e2e13e66e55a179dc9c969979a2c5c7949318f67
+/.idea/compiler.xml
+/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec
+/.idea/sonarlint/issuestore/3/8/3807d983095583bcd1784210d92d476846a6685e
+/.idea/.gitignore
+/.idea/sonarlint/issuestore/7/c/7cde474fd1a3c8003308a685e9f6cf107125a821
+/.idea/sonarlint/issuestore/9/6/9655b2a35fae75d92697b79cda62632f93f33e6e
+/.idea/sonarlint/issuestore/6/6/66040386d64666de54e55d200b21f03b9367a88c
+/.idea/sonarlint/issuestore/c/a/ca4b72a85b2aafc14892cb4ba853f547ab09c5bb
+/.idea/sonarlint/issuestore/c/a/ca86c940ab7a6e193dfce990fe04c0e5b484c587
+/.idea/sonarlint/issuestore/d/8/d8f2aea8fa36cef1d0dd78302015743bc2c49668
