@@ -20,5 +20,5 @@ Feature: Team scores display
     And User checks the score of first team '<firstScore>'
     And User checks the score of second team '<secondScore>'
     Examples:
-      | championship | month | firstTeam | secondTeam | firstScore | secondScore |
-      | Scottish Championship | AUG | Dunfermline | Arbroath | 0 | 3 |
+      | championship          | month | firstTeam   | secondTeam | firstScore | secondScore |
+      | Scottish Championship | AUG   | Dunfermline | Arbroath   | 0          | 3           |

@@ -3,7 +3,6 @@ package pages;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
@@ -52,8 +51,6 @@ public class NewsPage extends BasePage {
     @FindBy(xpath = "//div[contains(@class,'input-threeup-following')]//div[@class='input-error-message']")
     private WebElement emailErrorMessage;
 
-    Actions action = new Actions(driver);
-
     public NewsPage(WebDriver driver) {
         super(driver);
     }
@@ -77,11 +74,6 @@ public class NewsPage extends BasePage {
         return articleCategoriesList.get(0).getText();
     }
 
-    public void enterTextToSearchField(final String keyword) {
-        searchField.clear();
-        searchField.sendKeys(keyword);
-    }
-
     public void clickSearchButton() {
         searchButton.click();
     }
@@ -91,7 +83,7 @@ public class NewsPage extends BasePage {
     }
 
     public void clickYourCoronavirusStoriesButton() {
-        yourCoronavirusStoriesButton.click();;
+        yourCoronavirusStoriesButton.click();
     }
 
     public void clickYourQuestionsAnswered() {
@@ -100,21 +92,6 @@ public class NewsPage extends BasePage {
 
     public WebElement getYourQuestionsAnswered() {
         return yourQuestionsAnswered;
-    }
-
-    public void enterQuestion(final String question) {
-        questionField.clear();
-        questionField.sendKeys(question);
-    }
-
-    public void enterName(final String name) {
-        nameField.clear();
-        nameField.sendKeys(name);
-    }
-
-    public void enterEmail(final String email) {
-        emailField.clear();
-        emailField.sendKeys(email);
     }
 
     public void clickSubmitQuestionButton() {
@@ -145,4 +122,19 @@ public class NewsPage extends BasePage {
         return emailErrorMessage;
     }
 
+    public WebElement getQuestionField() {
+        return  questionField;
+    }
+
+    public WebElement getNameField() {
+        return nameField;
+    }
+
+    public WebElement getEmailField() {
+        return emailField;
+    }
+
+    public WebElement getSearchField() {
+        return searchField;
+    }
 }

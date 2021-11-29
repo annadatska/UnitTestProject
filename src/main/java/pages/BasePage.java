@@ -29,4 +29,10 @@ public class BasePage {
         WebDriverWait wait = new WebDriverWait(driver, timeToWait);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
+
+    public void enterData(String inputData, WebElement element) {
+        element.clear();
+        element.sendKeys(inputData);
+    }
+
 }

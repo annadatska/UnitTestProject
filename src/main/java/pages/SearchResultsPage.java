@@ -8,7 +8,7 @@ import java.util.List;
 
 public class SearchResultsPage extends BasePage {
 
-    @FindBy(xpath = "//a[@class='ssrcss-bxvqns-PromoLink e1f5wbog0']//span[@aria-hidden='false']")
+    @FindBy(xpath = "//a[contains(@class,'PromoLink')]//span[@aria-hidden='false']")
     private List<WebElement> searchResultsList;
 
     public SearchResultsPage(WebDriver driver) {

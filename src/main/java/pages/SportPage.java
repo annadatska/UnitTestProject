@@ -8,7 +8,7 @@ import java.util.List;
 
 public class SportPage extends BasePage {
 
-    @FindBy(xpath = "//li[@class='sp-c-sport-navigation__item ']//a[@data-stat-title='Football']")
+    @FindBy(xpath = "//li[contains(@class,'sport-navigation')]//a[@data-stat-title='Football']")
     private WebElement footballButton;
 
     @FindBy(xpath = "//a[@data-stat-title='Scores & Fixtures']")
@@ -48,11 +48,6 @@ public class SportPage extends BasePage {
 
     public void clickScoresAndFixturesButton() {
         scoresAndFixturesButton.click();
-    }
-
-    public void enterTextToSearchField(final String keyword) {
-        searchField.clear();
-        searchField.sendKeys(keyword);
     }
 
     public void clickSearchResultItem() {
@@ -98,5 +93,9 @@ public class SportPage extends BasePage {
 
     public WebElement getSecondDateOfGame() {
         return secondDateOfGame;
+    }
+
+    public WebElement getSearchField() {
+        return searchField;
     }
 }

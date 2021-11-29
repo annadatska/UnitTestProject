@@ -68,7 +68,7 @@ public class DefinitionSteps {
     public void copyTextOfTheCategoryLinkAndEnterToSearchField() {
         newsPage = pageFactoryManager.getNewsPage();
         newsPage.waitForPageLoadComplete(DEFAULT_TIMEOUT);
-        newsPage.enterTextToSearchField(newsPage.getTextOfHeadlineCategoryCategory());
+        newsPage.enterData(newsPage.getTextOfHeadlineCategoryCategory(), newsPage.getSearchField());
     }
 
     @And("User clicks the search button")
@@ -105,9 +105,9 @@ public class DefinitionSteps {
     @When("User enters {string}, {string} and {string}")
     public void userEntersQuestionNameAndEmail(final String question, final String name, final String email) {
         newsPage.waitForPageLoadComplete(DEFAULT_TIMEOUT);
-        newsPage.enterQuestion(question);
-        newsPage.enterName(name);
-        newsPage.enterEmail(email);
+        newsPage.enterData(question, newsPage.getQuestionField());
+        newsPage.enterData(name, newsPage.getNameField());
+        newsPage.enterData(email, newsPage.getEmailField());
         newsPage.clickSubmitQuestionButton();
     }
 
@@ -151,7 +151,7 @@ public class DefinitionSteps {
     @When("User makes search for the championship by a keyword {string}")
     public void searchForTheChampionship(final String championship) {
         sportPage.waitForPageLoadComplete(DEFAULT_TIMEOUT);
-        sportPage.enterTextToSearchField(championship);
+        sportPage.enterData(championship, sportPage.getSearchField());
         sportPage.waitVisibilityOfElement(DEFAULT_TIMEOUT, sportPage.getSearchResultItem());
         sportPage.clickSearchResultItem();
     }
